@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-9 border-b-2 border-gray-200">
+  <div class="pt-7 pb-9 border-b-2 border-gray-200 sticky top-0 bg-white">
     <form class="input__icon">
       <div class="input__icon__icon">
         <IconSearch/>

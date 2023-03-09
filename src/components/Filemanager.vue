@@ -1,5 +1,5 @@
 <template>
-  <div class="h__screen grid grid-cols-4 p-7 border-2 border-gray-300 rounded-lg">
+  <div class="h__screen grid grid-cols-4 border-2 border-gray-300 rounded-lg">
     <sidebar/>
     <Dropzone>
       <Files/>
@@ -15,6 +15,6 @@ import Files from "./ui/File/Files.vue";
 
 <style scoped>
 .h__screen {
-  height: 73vh;
+  height: 75vh;
 }
 </style>
