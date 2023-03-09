@@ -4,11 +4,11 @@
 
     <div class="mt-8">
       <div class="folder flex justify-between items-center text-xl text-gray-500  px-2">
-        <div class="py-1">
-          <i class="fa-solid fa-folder-open"></i>
-          /
+        <div class="py-1 flex">
+            <IconfolderOpen/>
+            <p class="ml-3">/</p>
         </div>
-        <i class="fa-solid fa-plus"></i>
+        <IconPlus/>
       </div>
 
       <folders/>
@@ -19,4 +19,6 @@
 <script setup>
 import Search from "./Search.vue";
 import Folders from "./Folders.vue";
+import IconfolderOpen from "../Icons/IconfolderOpen.vue";
+import IconPlus from "../Icons/IconPlus.vue";
 </script>

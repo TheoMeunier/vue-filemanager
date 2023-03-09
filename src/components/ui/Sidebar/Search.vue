@@ -1,8 +1,8 @@
 <template>
   <div class="pb-9 border-b-2 border-gray-200">
-    <form class="input__icon ">
+    <form class="input__icon">
       <div class="input__icon__icon">
-        <IconSearch class="h-6 h-6"/>
+        <IconSearch/>
       </div>
       <input
              type="text"
@@ -27,8 +27,7 @@ import IconSearch from "../Icons/IconSearch.vue";
   @apply flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none;
 }
 
-.input__icon .input__icon__icon input {
-  @apply rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full pl-10;
-  background: #f3f3f3;
+.input__icon input {
+  @apply rounded-md shadow-sm border-2 border-gray-200 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full pl-10 py-2;
 }
 </style>
