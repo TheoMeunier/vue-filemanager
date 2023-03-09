@@ -1,0 +1,26 @@
+includes:
+  - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+  level: 8
+  parallel:
+    maximumNumberOfProcesses: 1
+  paths:
+    - app
+  ignoreErrors:
+    - '#PHPDoc tag @mixin contains unknown class [a-zA-Z0-9\\<>,]+IdeHelper[a-zA-Z0-9]+#'
+  excludePaths:
+    - ./.github
+    - ./.scripts
+    - ./bootstrap/cache
+    - ./docker
+    - ./node_modules
+    - ./public
+    - ./storage
+    - ./storage-db
+    - ./vendor
+    - ./.phpstorm.meta.php
+    - ./_ide_helper.php
+    - ./_ide_helper_models.php
+  checkMissingIterableValueType: false
+  checkGenericClassInNonGenericObjectType: false
