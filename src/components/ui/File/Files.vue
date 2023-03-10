@@ -16,14 +16,16 @@
 </template>
 
 <script setup>
-import {useFilesStore} from "../../../store/FilesStore.js";
 import File from "./file.vue";
+import {useFoldersStore} from "../../../store/FoldersStore.js";
 import {onMounted} from "vue";
+import {useFilesStore} from "../../../store/FilesStore.js";
 
 const store = useFilesStore()
+const storeFolder = useFoldersStore()
 
 onMounted(() => {
-  store.getFiles()
+  storeFolder.addFileToFolder();
 })
 </script>
 

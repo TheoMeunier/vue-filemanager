@@ -30,9 +30,14 @@ export const useFoldersStore = defineStore('foldersStore', () => {
     }
 
     async function addFileToFolder(folder) {
-        if (!folder.files) {
-            await storeFile.getFiles(folder)
-            storeFile.files.value = folder.files
+        if (folder) {
+            if (!folder.files) {
+                let response = await storeFile.getFiles(folder)
+                folder.files = response
+            }
+        } else {
+            await storeFile.getFiles()
+            selectFolder.value = null
         }
     }
 
@@ -56,8 +61,8 @@ export const useFoldersStore = defineStore('foldersStore', () => {
         folderChildren,
         selectFolder,
         getFolders,
-        getChildrenFolder,
         addChildrenToFolder,
+        addFileToFolder,
         createFolder,
         deleteFolder
     }

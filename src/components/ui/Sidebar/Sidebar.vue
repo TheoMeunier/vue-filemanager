@@ -4,7 +4,8 @@
 
     <div class="mt-8">
       <div class="folder flex justify-between items-center text-xl text-gray-500 px-2"
-            :class="store.selectFolder === null ? 'active' : '' ">
+            :class="store.selectFolder === null ? 'active' : '' "
+            @click.prevent="store.addFileToFolder()">
         <div class="py-1 flex">
             <IconfolderOpen/>
             <p class="ml-3">/</p>

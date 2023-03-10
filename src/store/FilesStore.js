@@ -1,12 +1,11 @@
 import {defineStore} from "pinia";
-import {ref} from "vue";
 import axios from "axios";
+import {ref} from "vue";
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})
-
     async function getFiles(folder = null) {
-        let url = folder ? '?folder=' + folder.name : ''
+        let url = folder ? '?folder=' + folder.id : ''
 
         let response = await axios.get('http://localhost:8888/api/files' + url)
         files.value = response.data
