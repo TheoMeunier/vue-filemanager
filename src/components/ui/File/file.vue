@@ -12,10 +12,14 @@
 
 <script setup>
 import IconCross from "../Icons/IconCross.vue";
+import {useFilesStore} from "../../../store/FilesStore.js";
 
+const store = useFilesStore()
 const props = defineProps({
   file: {}
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
