@@ -2,6 +2,7 @@ import {defineStore} from "pinia";
 import {ref} from "vue";
 import axios from "axios";
 import {useFilesStore} from "./FilesStore.js";
+import {getParentFolder} from "../functions/foldersFunction.js";
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})
@@ -50,9 +51,15 @@ export const useFoldersStore = defineStore('foldersStore', () => {
         }
     }
     async function deleteFolder(folder) {
-        if (confirm('Voulez vous vraiment supprimer ce dossier ?')) {
-            await axios.delete('http://localhost:8888/api/folders/' + folder.name)
-            folders.value.splice(folders.value.indexOf(folder), 1)
+        await axios.delete('http://localhost:8888/api/folders/' + folder.id)
+        let index = folders.value.indexOf(folder)
+
+        if(folder.parent) {
+            let parent = getParentFolder(folders.value, folder.parent)
+            index = parent.children.indexOf(folder)
+            parent.children.splice(index, 1)
+        } else {
+            folders.value.splice(index, 1)
         }
     }
 

@@ -9,7 +9,7 @@
         <p class="text-2xl py-3">Ce dossier est vide</p>
         <p class="text-xl py-4">Déposer un fichier ici pour le téléverser<i
             class="fa-solid fa-file-arrow-down ml-2"></i></p>
-        <button class="btn btn__danger">Supprimer le dossier</button>
+        <button class="btn btn__danger" v-if="storeFolder.selectFolder " @click.prevent="removeFolder">Supprimer le dossier</button>
       </div>
     </slot>
   </div>
@@ -27,6 +27,13 @@ const storeFolder = useFoldersStore()
 onMounted(() => {
   storeFolder.addFileToFolder();
 })
+
+const removeFolder = async () => {
+  if (confirm('Voulez vous vraiment supprimer ce dossier ?')) {
+    await storeFolder.deleteFolder(storeFolder.selectFolder)
+    storeFolder.selectFolder.value = null
+  }
+}
 </script>
 
 <style scoped>

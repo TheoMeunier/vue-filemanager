@@ -16,6 +16,8 @@
 
 <script setup>
 import IconSearch from "../Icons/IconSearch.vue";
+
+
 </script>
 
 <style scoped>
