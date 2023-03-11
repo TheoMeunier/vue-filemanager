@@ -5,10 +5,13 @@
         <IconSearch/>
       </div>
       <input
+            v-model="store.query"
              type="text"
              class="input__icon__input w-64"
              id="example-search-input"
              placeholder="Rechercher"
+            @keyup="store.searchFiles()"
+
       />
     </form>
   </div>
@@ -16,7 +19,9 @@
 
 <script setup>
 import IconSearch from "../Icons/IconSearch.vue";
+import {useSearchFileStore} from "../../../store/SearchFileStore.js";
 
+const store = useSearchFileStore()
 
 </script>
 

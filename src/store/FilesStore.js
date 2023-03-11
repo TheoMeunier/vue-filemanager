@@ -4,6 +4,7 @@ import {ref} from "vue";
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})
+
     async function getFiles(folder = null) {
         let url = folder ? '?folder=' + folder.id : ''
 

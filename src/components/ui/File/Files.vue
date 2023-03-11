@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-start flex-wrap gap-5 py-6">
     <slot v-if="store.files.length" v-for="file in store.files" :key="file.id">
-      <file :file="file"/>
+       <file :file="file" v-show="!file.disable"/>
     </slot>
 
     <slot v-else>
