@@ -15,16 +15,19 @@ export const useFilesStore = defineStore('filesStore', () => {
 
     }
 
-    /*async function deleteFile(file) {
+    async function deleteFile(file) {
         if (confirm('Voulez vous vraiment supprimer ce fichier ?')) {
-            await axios.delete('/api/files/' + file.id, file)
-            files.value.splice(indfiles.value.indexOf(file), 1)
+            await axios.delete('http://localhost:8888/api/files/' + file.id, file)
+
+            let index = files.value.indexOf(file)
+            files.value.splice(index, 1)
         }
-    }*/
+    }
 
 
     return {
         files,
-        getFiles
+        getFiles,
+        deleteFile
     }
 })
