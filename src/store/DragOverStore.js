@@ -1,5 +1,5 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useDragIsOver = defineStore('dragIsOver', () => {
     const isOver = ref(false)
@@ -16,5 +16,5 @@ export const useDragIsOver = defineStore('dragIsOver', () => {
         isOver.value = true
     }
 
-    return {isOver, getIsOver, turnOn, turnOff}
+    return { isOver, getIsOver, turnOn, turnOff }
 })

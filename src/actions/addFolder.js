@@ -1,5 +1,5 @@
-import {useFoldersStore} from "../store/FoldersStore.js";
-import {useNewFolderStore} from "../store/NewFolderStore.js";
+import { useFoldersStore } from '../store/FoldersStore.js'
+import { useNewFolderStore } from '../store/NewFolderStore.js'
 
 export async function addFolder(parent) {
     const store = useFoldersStore()
@@ -30,10 +30,9 @@ export async function addFolder(parent) {
         parent.children.unshift({
             id: null,
             name: null,
-            parent: null
+            parent: null,
         })
     }
-
 }
 
 export async function createNewFolder(name) {
@@ -42,7 +41,7 @@ export async function createNewFolder(name) {
 
     const data = {
         name: name,
-        parent: storeNewFolder.parentEdit.id
+        parent: storeNewFolder.parentEdit.id,
     }
 
     console.log(data)

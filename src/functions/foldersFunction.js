@@ -1,6 +1,6 @@
-export function getParentFolder (sources, id) {
+export function getParentFolder(sources, id) {
     let parent
-    const searchSource = (source) => {
+    const searchSource = source => {
         if (source.id === id) {
             parent = source
         }
@@ -8,7 +8,6 @@ export function getParentFolder (sources, id) {
         if (source.children) {
             source.children.forEach(searchSource)
         }
-
     }
 
     sources.forEach(searchSource)
