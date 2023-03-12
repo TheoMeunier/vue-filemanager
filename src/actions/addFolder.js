@@ -5,13 +5,7 @@ export async function addFolder(parent) {
     const store = useFoldersStore()
     const storeNewFolder = useNewFolderStore()
 
-    if (storeNewFolder.isEditing) {
-        if (!parent) {
-            store.folders.shift()
-        } else {
-            storeNewFolder.parentEdit.children.shift()
-        }
-    }
+    removeInputEdit(storeNewFolder, store);
 
     storeNewFolder.parentEdit = parent ?? {}
     storeNewFolder.isEditing = true
@@ -38,13 +32,36 @@ export async function addFolder(parent) {
 export async function createNewFolder(name) {
     const store = useFoldersStore()
     const storeNewFolder = useNewFolderStore()
+    const parentEdit = storeNewFolder.parentEdit
 
     const data = {
         name: name,
-        parent: storeNewFolder.parentEdit.id,
+        parent: parentEdit.id ?? null,
     }
 
-    console.log(data)
+    await store.createFolder(data)
 
-    //await store.createFolder(data)
+    if (!parentEdit.children) {
+        store.folders.push({id: name, name: name, parent: null})
+    } else {
+        parentEdit.children.push({
+            id: parentEdit.id + '/' + name,
+            name: name,
+            parent: parentEdit.id
+        })
+    }
+
+    removeInputEdit(storeNewFolder, store)
+    storeNewFolder.isEditing = false
+    storeNewFolder.parentEdit = {}
+}
+
+function removeInputEdit(storeNewFolder, store) {
+    if (storeNewFolder.isEditing) {
+        if (!storeNewFolder.parentEdit.children) {
+            store.folders.shift()
+        } else {
+            storeNewFolder.parentEdit.children.shift()
+        }
+    }
 }
