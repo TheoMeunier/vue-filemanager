@@ -45,7 +45,6 @@ export const useFoldersStore = defineStore('foldersStore', () => {
     async function createFolder(data) {
         try {
             await axios.post('http://localhost:8888/api/folders', data)
-            folders.value[0] = {id: data.name, name: data.name, parent: null}
         } catch (e) {
             console.log(e)
         }

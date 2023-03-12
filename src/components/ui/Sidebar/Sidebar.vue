@@ -10,8 +10,10 @@
             <IconfolderOpen/>
             <p class="ml-3">/</p>
         </div>
-        <IconPlus/>
+        <IconPlus @click.prevent="addFolder(null)"/>
       </div>
+
+
 
       <folders :folders="store.folders"/>
     </div>
@@ -25,6 +27,8 @@ import IconfolderOpen from "../Icons/IconfolderOpen.vue";
 import IconPlus from "../Icons/IconPlus.vue";
 import {useFoldersStore} from "../../../store/FoldersStore.js";
 import {onMounted} from "vue";
+import {addFolder} from "../../../actions/addFolder.js";
+import NewFolder from "./NewFolder.vue";
 
 const store = useFoldersStore()
 onMounted(() => {
