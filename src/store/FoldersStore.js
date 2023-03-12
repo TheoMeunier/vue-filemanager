@@ -1,8 +1,8 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
-import axios from "axios";
-import {useFilesStore} from "./FilesStore.js";
-import {getParentFolder} from "../functions/foldersFunction.js";
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+import axios from 'axios'
+import { useFilesStore } from './FilesStore.js'
+import { getParentFolder } from '../functions/foldersFunction.js'
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})
@@ -10,7 +10,7 @@ export const useFoldersStore = defineStore('foldersStore', () => {
     const storeFile = useFilesStore()
     let folderChildren
 
-    async function getFolders () {
+    async function getFolders() {
         let response = await axios.get('http://localhost:8888/api/folders')
         folders.value = response.data
     }
@@ -22,7 +22,7 @@ export const useFoldersStore = defineStore('foldersStore', () => {
 
     async function addChildrenToFolder(folder) {
         if (!folder.children) {
-            await  getChildrenFolder(folder.id)
+            await getChildrenFolder(folder.id)
             folder.children = folderChildren
         }
 
@@ -53,7 +53,7 @@ export const useFoldersStore = defineStore('foldersStore', () => {
         await axios.delete('http://localhost:8888/api/folders/' + folder.id)
         let index = folders.value.indexOf(folder)
 
-        if(folder.parent) {
+        if (folder.parent) {
             let parent = getParentFolder(folders.value, folder.parent)
             index = parent.children.indexOf(folder)
             parent.children.splice(index, 1)
@@ -70,6 +70,6 @@ export const useFoldersStore = defineStore('foldersStore', () => {
         addChildrenToFolder,
         addFileToFolder,
         createFolder,
-        deleteFolder
+        deleteFolder,
     }
 })

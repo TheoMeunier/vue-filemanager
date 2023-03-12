@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "npx prettier --check 'src/**/*.+(js|json|scss|sass|css|vue)' '.prettierrc.json'",
+    "lint-cs": "npx prettier --write 'src/**/*.+(js|json|scss|sass|css|vue)' '.prettierrc.json'"
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "prettier": "2.8.4",
     "tailwindcss": "^3.2.7",
     "vite": "^4.1.0"
   }

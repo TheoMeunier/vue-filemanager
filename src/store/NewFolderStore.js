@@ -1,5 +1,5 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useNewFolderStore = defineStore('newFolder', () => {
     const isEditing = ref(false)
@@ -7,6 +7,6 @@ export const useNewFolderStore = defineStore('newFolder', () => {
 
     return {
         isEditing,
-        parentEdit
+        parentEdit,
     }
 })

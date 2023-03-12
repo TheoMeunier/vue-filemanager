@@ -1,7 +1,7 @@
-import {defineStore} from "pinia";
-import axios from "axios";
-import {ref} from "vue";
-import {useFoldersStore} from "./FoldersStore.js";
+import { defineStore } from 'pinia'
+import axios from 'axios'
+import { ref } from 'vue'
+import { useFoldersStore } from './FoldersStore.js'
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})
@@ -18,16 +18,16 @@ export const useFilesStore = defineStore('filesStore', () => {
         try {
             const fd = new FormData()
             const selectFolder = storeFolder.selectFolder
-            fd.append("file", file)
+            fd.append('file', file)
 
             if (selectFolder) {
-                fd.append("folder", selectFolder.id)
+                fd.append('folder', selectFolder.id)
             }
 
             let response = await axios.post('http://localhost:8888/api/files', fd, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
-                }
+                    'Content-Type': 'multipart/form-data',
+                },
             })
 
             files.value.push(response.data)
@@ -45,11 +45,10 @@ export const useFilesStore = defineStore('filesStore', () => {
         }
     }
 
-
     return {
         files,
         getFiles,
         uploadFile,
-        deleteFile
+        deleteFile,
     }
 })
