@@ -4,7 +4,12 @@
       <div v-if="props.folder.id" class="folder px-2 py-2 flex justify-between"
            :class="store.selectFolder && store.selectFolder.id === props.folder.id ? 'active' : ''">
         <p class="flex" @click.stop.prevent="getFields(); toggleChildren()">
-          <IconfolderClose/>
+          <slot v-if="!isFolderOpen || (props.folder.children && !props.folder.children.length)">
+            <IconfolderClose/>
+          </slot>
+          <slot v-else>
+            <IconfolderOpen/>
+          </slot>
           <span class="ml-3">{{ props.folder.name }}</span>
         </p>
         <IconPlus @click="toggleChildren(); addFolder(props.folder)"/>
@@ -30,6 +35,7 @@ import {useFoldersStore} from '../../../store/FoldersStore.js'
 import {onMounted, ref} from 'vue'
 import NewFolder from './NewFolder.vue'
 import {addFolder} from '../../../actions/addFolder.js'
+import IconfolderOpen from "../Icons/IconfolderOpen.vue";
 
 const store = useFoldersStore()
 const isFolderOpen = ref(false)
