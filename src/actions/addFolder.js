@@ -56,6 +56,15 @@ export async function createNewFolder(name) {
     storeNewFolder.parentEdit = {}
 }
 
+export function closeOnEscape() {
+    const store = useFoldersStore()
+    const storeNewFolder = useNewFolderStore()
+
+    removeInputEdit(storeNewFolder, store)
+    storeNewFolder.isEditing = false
+    storeNewFolder.parentEdit = {}
+}
+
 function removeInputEdit(storeNewFolder, store) {
     if (storeNewFolder.isEditing) {
         if (!storeNewFolder.parentEdit.children) {

@@ -1,7 +1,14 @@
 <template>
     <div class="flex justify-between items-center">
         <IconFolderClose />
-        <input type="text" class="form-control" v-model="newFolder.name" placeholder="name folder" />
+        <input
+            type="text"
+            class="form-control"
+            v-model="newFolder.name"
+            placeholder="name folder"
+            @keyup.enter="createNewFolder(newFolder.name)"
+            @keyup.esc="closeOnEscape"
+        />
         <IconArrowRight @click.stop="createNewFolder(newFolder.name)" />
     </div>
 </template>
@@ -11,7 +18,7 @@ import IconFolderClose from '../Icons/IconfolderClose.vue'
 import IconArrowRight from '../Icons/IconArrowRight.vue'
 import { useFoldersStore } from '../../../store/FoldersStore.js'
 import { reactive } from 'vue'
-import { createNewFolder } from '../../../actions/addFolder.js'
+import {closeOnEscape, createNewFolder} from '../../../actions/addFolder.js'
 
 const store = useFoldersStore()
 
