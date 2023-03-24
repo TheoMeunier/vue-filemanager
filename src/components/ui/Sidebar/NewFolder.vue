@@ -6,6 +6,7 @@
             class="form-control"
             v-model="newFolder.name"
             placeholder="name folder"
+            ref="input"
             @keyup.enter="createNewFolder(newFolder.name)"
             @keyup.esc="closeOnEscape"
         />
@@ -17,10 +18,15 @@
 import IconFolderClose from '../Icons/IconfolderClose.vue'
 import IconArrowRight from '../Icons/IconArrowRight.vue'
 import { useFoldersStore } from '../../../store/FoldersStore.js'
-import { reactive } from 'vue'
+import {onMounted, reactive, ref} from 'vue'
 import {closeOnEscape, createNewFolder} from '../../../actions/addFolder.js'
 
+onMounted(() => {
+  input.value.focus()
+})
+
 const store = useFoldersStore()
+const input = ref(null)
 
 const newFolder = reactive({
     name: '',
