@@ -4,10 +4,7 @@
             <div v-if="props.folder.id" class="folder px-2 py-2 flex justify-between" :class="store.selectFolder && store.selectFolder.id === props.folder.id ? 'active' : ''">
                 <p
                     class="flex"
-                    @click.stop.prevent="
-                        getFields()
-                        toggleChildren()
-                    "
+                    @click.stop.prevent="getFields();toggleChildren()"
                 >
                     <slot v-if="!isFolderOpen || (props.folder.children && !props.folder.children.length)">
                         <IconfolderClose />
@@ -18,10 +15,7 @@
                     <span class="ml-3">{{ props.folder.name }}</span>
                 </p>
                 <IconPlus
-                    @click="
-                        toggleChildren()
-                        folder(props.folder)
-                    "
+                    @click="toggleChildren(); folder(props.folder)"
                 />
             </div>
 
