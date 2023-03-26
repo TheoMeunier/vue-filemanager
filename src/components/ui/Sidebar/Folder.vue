@@ -20,7 +20,7 @@
                 <IconPlus
                     @click="
                         toggleChildren()
-                        addFolder(props.folder)
+                        folder(props.folder)
                     "
                 />
             </div>
@@ -43,7 +43,7 @@ import Folders from './Folders.vue'
 import { useFoldersStore } from '../../../store/FoldersStore.js'
 import { onMounted, ref } from 'vue'
 import NewFolder from './NewFolder.vue'
-import { addFolder } from '../../../actions/addFolder.js'
+import { folder } from '../../../actions/folder.js'
 import IconfolderOpen from '../Icons/IconfolderOpen.vue'
 
 const store = useFoldersStore()

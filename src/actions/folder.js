@@ -2,7 +2,7 @@ import { useFoldersStore } from '../store/FoldersStore.js'
 import { useNewFolderStore } from '../store/NewFolderStore.js'
 import { useAlertStore } from '../store/AlertStore.js'
 
-export async function addFolder(parent) {
+export async function folder(parent) {
     const store = useFoldersStore()
     const storeNewFolder = useNewFolderStore()
 
