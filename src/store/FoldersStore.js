@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { useFilesStore } from './FilesStore.js'
 import { getParentFolder } from '../functions/foldersFunction.js'
-import {useAlertStore} from "./AlertStore.js";
+import { useAlertStore } from './AlertStore.js'
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})

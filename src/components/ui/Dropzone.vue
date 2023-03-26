@@ -1,9 +1,19 @@
 <template>
     <div
         class="relative col-span-3 px-6"
-        @dragleave.prevent="dragLeave($event);store.turnOff()"
-        @dragover.prevent="dragOver($event); store.turnOn()"
-        @drop.prevent="drop($event); store.turnOff()">
+        @dragleave.prevent="
+            dragLeave($event)
+            store.turnOff()
+        "
+        @dragover.prevent="
+            dragOver($event)
+            store.turnOn()
+        "
+        @drop.prevent="
+            drop($event)
+            store.turnOff()
+        "
+    >
         <slot></slot>
         <div class="dropzone__file" :class="store.isOver === true ? 'active' : ''">
             <i class="fa-solid fa-cloud-arrow-up"></i>

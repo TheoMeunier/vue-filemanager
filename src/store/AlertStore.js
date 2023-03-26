@@ -1,5 +1,5 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useAlertStore = defineStore('alert', () => {
     const notifications = ref([])
@@ -28,6 +28,6 @@ export const useAlertStore = defineStore('alert', () => {
         notifications,
         success,
         error,
-        closeAlert
+        closeAlert,
     }
 })

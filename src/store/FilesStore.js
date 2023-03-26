@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import { ref } from 'vue'
 import { useFoldersStore } from './FoldersStore.js'
-import {useAlertStore} from "./AlertStore.js";
+import { useAlertStore } from './AlertStore.js'
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})

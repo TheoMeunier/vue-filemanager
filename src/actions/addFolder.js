@@ -1,12 +1,12 @@
 import { useFoldersStore } from '../store/FoldersStore.js'
 import { useNewFolderStore } from '../store/NewFolderStore.js'
-import {useAlertStore} from "../store/AlertStore.js";
+import { useAlertStore } from '../store/AlertStore.js'
 
 export async function addFolder(parent) {
     const store = useFoldersStore()
     const storeNewFolder = useNewFolderStore()
 
-    removeInputEdit(storeNewFolder, store);
+    removeInputEdit(storeNewFolder, store)
 
     storeNewFolder.parentEdit = parent ?? {}
     storeNewFolder.isEditing = true
@@ -44,12 +44,12 @@ export async function createNewFolder(name) {
     await store.createFolder(data)
 
     if (!parentEdit.children) {
-        store.folders.push({id: name, name: name, parent: null})
+        store.folders.push({ id: name, name: name, parent: null })
     } else {
         parentEdit.children.push({
             id: parentEdit.id + '/' + name,
             name: name,
-            parent: parentEdit.id
+            parent: parentEdit.id,
         })
     }
 
