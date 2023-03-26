@@ -1,5 +1,6 @@
 import { useFoldersStore } from '../store/FoldersStore.js'
 import { useNewFolderStore } from '../store/NewFolderStore.js'
+import {useAlertStore} from "../store/AlertStore.js";
 
 export async function addFolder(parent) {
     const store = useFoldersStore()
@@ -32,6 +33,7 @@ export async function addFolder(parent) {
 export async function createNewFolder(name) {
     const store = useFoldersStore()
     const storeNewFolder = useNewFolderStore()
+    const storeAlert = useAlertStore()
     const parentEdit = storeNewFolder.parentEdit
 
     const data = {
@@ -54,6 +56,8 @@ export async function createNewFolder(name) {
     removeInputEdit(storeNewFolder, store)
     storeNewFolder.isEditing = false
     storeNewFolder.parentEdit = {}
+
+    storeAlert.success('create folder successfully')
 }
 
 export function closeOnEscape() {

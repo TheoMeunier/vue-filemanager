@@ -2,10 +2,12 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import { ref } from 'vue'
 import { useFoldersStore } from './FoldersStore.js'
+import {useAlertStore} from "./AlertStore.js";
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})
     const storeFolder = useFoldersStore()
+    const storeAlert = useAlertStore()
 
     async function getFiles(folder = null) {
         let url = folder ? '?folder=' + folder.id : ''
@@ -31,8 +33,9 @@ export const useFilesStore = defineStore('filesStore', () => {
             })
 
             files.value.push(response.data)
+            storeAlert.success('Upload file successfully')
         } catch (e) {
-            console.log(e)
+            storeAlert.success('Upload file error')
         }
     }
 
@@ -42,6 +45,7 @@ export const useFilesStore = defineStore('filesStore', () => {
 
             let index = files.value.indexOf(file)
             files.value.splice(index, 1)
+            storeAlert.success('Delete file successfully')
         }
     }
 

@@ -3,11 +3,13 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { useFilesStore } from './FilesStore.js'
 import { getParentFolder } from '../functions/foldersFunction.js'
+import {useAlertStore} from "./AlertStore.js";
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})
     const selectFolder = ref(null)
     const storeFile = useFilesStore()
+    const storeAlert = useAlertStore()
     let folderChildren
 
     async function getFolders() {
@@ -60,6 +62,8 @@ export const useFoldersStore = defineStore('foldersStore', () => {
         } else {
             folders.value.splice(index, 1)
         }
+
+        storeAlert.success('delete folder successfully')
     }
 
     return {
