@@ -23,8 +23,8 @@
 </template>
 
 <script setup>
-import IconSuccess from '../ui/Icons/IconSuccess.vue'
-import IconError from '../ui/Icons/IconError.vue'
+import IconSuccess from '../Icons/IconSuccess.vue'
+import IconError from '../Icons/IconError.vue'
 import { useAlertStore } from '../../store/AlertStore.js'
 
 const store = useAlertStore()

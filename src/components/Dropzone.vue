@@ -22,8 +22,8 @@
 </template>
 
 <script setup>
-import { dragOver, dragLeave, drop } from '../../actions/dropzone.js'
-import { useDragIsOver } from '../../store/DragOverStore.js'
+import { dragOver, dragLeave, drop } from '../actions/dropzone.js'
+import { useDragIsOver } from '../store/DragOverStore.js'
 
 const store = useDragIsOver()
 </script>

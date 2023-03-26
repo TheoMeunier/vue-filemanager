@@ -11,7 +11,7 @@
 
 <script setup>
 import IconSearch from '../Icons/IconSearch.vue'
-import { useSearchFileStore } from '../../../store/SearchFileStore.js'
+import { useSearchFileStore } from '../../store/SearchFileStore.js'
 
 const store = useSearchFileStore()
 </script>

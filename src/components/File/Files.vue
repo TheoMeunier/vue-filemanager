@@ -18,9 +18,9 @@
 
 <script setup>
 import File from './file.vue'
-import { useFoldersStore } from '../../../store/FoldersStore.js'
+import { useFoldersStore } from '../../store/FoldersStore.js'
 import { onMounted } from 'vue'
-import { useFilesStore } from '../../../store/FilesStore.js'
+import { useFilesStore } from '../../store/FilesStore.js'
 
 const store = useFilesStore()
 const storeFolder = useFoldersStore()

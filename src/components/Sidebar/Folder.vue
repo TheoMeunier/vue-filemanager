@@ -40,10 +40,10 @@
 import IconfolderClose from '../Icons/IconfolderClose.vue'
 import IconPlus from '../Icons/IconPlus.vue'
 import Folders from './Folders.vue'
-import { useFoldersStore } from '../../../store/FoldersStore.js'
+import { useFoldersStore } from '../../store/FoldersStore.js'
 import { onMounted, ref } from 'vue'
 import NewFolder from './NewFolder.vue'
-import { folder } from '../../../actions/folder.js'
+import { folder } from '../../actions/folder.js'
 import IconfolderOpen from '../Icons/IconfolderOpen.vue'
 
 const store = useFoldersStore()

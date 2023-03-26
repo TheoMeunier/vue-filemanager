@@ -9,9 +9,9 @@
 </template>
 
 <script setup>
-import Sidebar from './ui/Sidebar/Sidebar.vue'
-import Dropzone from './ui/Dropzone.vue'
-import Files from './ui/File/Files.vue'
+import Sidebar from './Sidebar/Sidebar.vue'
+import Dropzone from './Dropzone.vue'
+import Files from './File/Files.vue'
 import Alerts from './Alert/Alerts.vue'
 </script>
 
