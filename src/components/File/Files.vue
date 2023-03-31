@@ -39,16 +39,16 @@ const removeFolder = async () => {
 
 <style scoped>
 .btn__danger {
-  display: block;
-  margin: 0 auto;
-  background: #d70d0d;
-  color: white;
-  padding: 10px 8px;
-  border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    background: #d70d0d;
+    color: white;
+    padding: 10px 8px;
+    border-radius: 5px;
 }
 
-.btn__danger:hover{
-  background: #b60e0e;
-  transition: .5s;
+.btn__danger:hover {
+    background: #b60e0e;
+    transition: 0.5s;
 }
 </style>

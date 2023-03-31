@@ -11,7 +11,7 @@
         </div>
         <div class="alert__content">{{ props.message }}</div>
         <button type="button" class="alert__close" @click.prevent="store.closeAlert(props.index)" aria-label="Close">
-          <IconClose/>
+            <IconClose />
         </button>
     </div>
 </template>
@@ -20,7 +20,7 @@
 import IconSuccess from '../Icons/IconSuccess.vue'
 import IconError from '../Icons/IconError.vue'
 import { useAlertStore } from '../../store/AlertStore.js'
-import IconClose from "../Icons/IconClose.vue";
+import IconClose from '../Icons/IconClose.vue'
 
 const store = useAlertStore()
 const props = defineProps({
