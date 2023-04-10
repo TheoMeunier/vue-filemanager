@@ -1,6 +1,6 @@
 <template>
     <div class="mt-1">
-        <li class="ml-10 text-xl text-gray-500">
+        <li class="ml-9 text-xl text-gray-500">
             <div v-if="props.folder.id" class="folder px-2 py-2 flex justify-between" :class="store.selectFolder && store.selectFolder.id === props.folder.id ? 'active' : ''">
                 <p
                     class="flex"
@@ -19,7 +19,7 @@
                 />
             </div>
 
-            <div v-else class="folder px-2 py-2 flex justify-between">
+            <div v-else class="folder px-2 py-2">
                 <NewFolder />
             </div>
         </li>
