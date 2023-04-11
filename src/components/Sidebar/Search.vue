@@ -4,7 +4,7 @@
             <div class="input__icon__icon">
                 <IconSearch />
             </div>
-            <input v-model="store.query" type="text" class="input__icon__input w-64" id="example-search-input" placeholder="Rechercher" @keyup="store.searchFiles()" />
+            <input v-model="store.query" type="text" class="input__icon__input w-64" id="example-search-input" :placeholder="$t('search')" @keyup="store.searchFiles()" />
         </form>
     </div>
 </template>

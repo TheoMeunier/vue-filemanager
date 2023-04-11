@@ -1,6 +1,7 @@
 import { useFoldersStore } from '../store/FoldersStore.js'
 import { useNewFolderStore } from '../store/NewFolderStore.js'
 import { useAlertStore } from '../store/AlertStore.js'
+import {i18n} from "@/lang/index.js";
 
 export async function folder(parent) {
     const store = useFoldersStore()
@@ -57,7 +58,7 @@ export async function createNewFolder(name) {
     storeNewFolder.isEditing = false
     storeNewFolder.parentEdit = {}
 
-    storeAlert.success('create folder successfully')
+    storeAlert.success(i18n.t('flash.folder_create'))
 }
 
 export function closeOnEscape() {

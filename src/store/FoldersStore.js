@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useFilesStore } from './FilesStore.js'
 import { getParentFolder } from '../functions/foldersFunction.js'
 import { useAlertStore } from './AlertStore.js'
+import {i18n} from "@/lang/index.js";
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})
@@ -63,7 +64,7 @@ export const useFoldersStore = defineStore('foldersStore', () => {
             folders.value.splice(index, 1)
         }
 
-        storeAlert.success('delete folder successfully')
+        storeAlert.success(i18n.t('flash.folder_delete'))
     }
 
     return {

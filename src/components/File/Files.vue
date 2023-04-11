@@ -7,9 +7,9 @@
         <slot v-else>
             <div class="flex flex-col items-center justify-center text-gray-400 w-full">
                 <p class="text-2xl py-3">{{ $t('folder.empty_folder')}}</p>
-                <p class="text-xl py-4">Déposer un fichier ici pour le téléverser<i class="fa-solid fa-file-arrow-down ml-2"></i></p>
+                <p class="text-xl py-4">{{ $t('drop_file')}}<i class="fa-solid fa-file-arrow-down ml-2"></i></p>
                 <button class="btn btn__danger" v-if="storeFolder.selectFolder && !storeFolder.selectFolder.children.length" @click.prevent="removeFolder">
-                    Supprimer le dossier
+                    {{ $t('folder.btn_delete_folder')}}
                 </button>
             </div>
         </slot>
@@ -21,6 +21,7 @@ import File from './file.vue'
 import { useFoldersStore } from '../../store/FoldersStore.js'
 import { onMounted } from 'vue'
 import { useFilesStore } from '../../store/FilesStore.js'
+import {i18n} from "@/lang/index.js";
 
 const store = useFilesStore()
 const storeFolder = useFoldersStore()
@@ -30,7 +31,7 @@ onMounted(() => {
 })
 
 const removeFolder = async () => {
-    if (confirm('Voulez vous vraiment supprimer ce dossier ?')) {
+    if (confirm(i18n.t('folder.confirm_delete'))) {
         await storeFolder.deleteFolder(storeFolder.selectFolder)
         storeFolder.selectFolder.value = null
     }

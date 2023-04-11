@@ -1,37 +1,17 @@
-export const message = {
-    en: {
-        'search': 'Search',
-        'drop_file': "Drop a file here to add it",
-        'folder': {
-            'empty_folder': "This folder is empty",
-            'btn_delete_folder': 'Delete the folder',
-            'input_name_folder': 'Name folder'
-        },
-        'flash': {
-            'file_upload': 'File has been uploaded',
-            'file_delete': 'File has been deleted',
-            'folder_create': 'File has been created',
-            'folder_delete': 'File has been deleted'
-        }
-    },
-    fr: {
-        'search': 'Rechercher',
-        'drop_file': "Déposer un fichier ici pour l'ajouter",
-        'folder': {
-            'empty_folder': "Ce dossier est vide",
-            'btn_delete_folder': 'Supprimer le dossier',
-            'input_name_folder': 'Nom dossier'
-        },
-        'flash': {
-            'file_upload': 'Fichier à bien été uploader',
-            'file_delete': 'Fichier à bien été supprimer',
-            'folder_create': 'Dossier à bien été créer',
-            'folder_delete': 'Dossier à bien été supprimer'
-        }
-    }
-}
+import {I18n} from "i18n-js";
+import {message} from "@/lang/lang.js";
+import {createI18n} from "vue-i18n";
 
-export default createI18n({
-    locale: 'fr',
+let locale = 'fr'
+let defaultLocal = 'en'
 
+export const i18n = new I18n(message)
+i18n.locale = locale
+i18n.defaultLocale = defaultLocal
+
+export const i18nVue = createI18n({
+    legacy: true,
+    locale: locale,
+    fallbackLocal: defaultLocal,
+    messages: message
 })
