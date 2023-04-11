@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col h-50 basis-1/6  px-2">
-        <div class="relative flex flex-col p-2 border-2 border-gray-200  rounded-lg group">
+        <div class="relative flex flex-col items-center p-2 border-2 border-gray-200  rounded-lg group">
             <div
                 @click.prevent="store.deleteFile(props.file)"
                 class="text-red-500 -top-4 -right-3 absolute cursor-pointer text-2xl opacity-0 group-hover:opacity-100 transition duration-300"
