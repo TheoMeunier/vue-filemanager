@@ -6,7 +6,7 @@
 
         <slot v-else>
             <div class="flex flex-col items-center justify-center text-gray-400 w-full">
-                <p class="text-2xl py-3">Ce dossier est vide</p>
+                <p class="text-2xl py-3">{{ $t('folder.empty_folder')}}</p>
                 <p class="text-xl py-4">Déposer un fichier ici pour le téléverser<i class="fa-solid fa-file-arrow-down ml-2"></i></p>
                 <button class="btn btn__danger" v-if="storeFolder.selectFolder && !storeFolder.selectFolder.children.length" @click.prevent="removeFolder">
                     Supprimer le dossier
