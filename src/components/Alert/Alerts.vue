@@ -8,7 +8,7 @@
 
 <script setup>
 import Alert from './Alert.vue'
-import { useAlertStore } from '../../store/AlertStore.js'
+import { useAlertStore } from '@/store/AlertStore.js'
 
 const store = useAlertStore()
 </script>

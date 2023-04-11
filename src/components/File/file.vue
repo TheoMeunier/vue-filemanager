@@ -15,7 +15,7 @@
 
 <script setup>
 import IconCross from '../Icons/IconCross.vue'
-import { useFilesStore } from '../../store/FilesStore.js'
+import { useFilesStore } from '@/store/FilesStore.js'
 
 const store = useFilesStore()
 const props = defineProps({

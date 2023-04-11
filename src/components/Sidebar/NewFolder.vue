@@ -17,9 +17,9 @@
 <script setup>
 import IconFolderClose from '../Icons/IconfolderClose.vue'
 import IconArrowRight from '../Icons/IconArrowRight.vue'
-import { useFoldersStore } from '../../store/FoldersStore.js'
+import { useFoldersStore } from '@/store/FoldersStore.js'
 import { onMounted, reactive, ref } from 'vue'
-import { closeOnEscape, createNewFolder } from '../../actions/folder.js'
+import { closeOnEscape, createNewFolder } from '@/actions/folder.js'
 
 onMounted(() => {
     input.value.focus()

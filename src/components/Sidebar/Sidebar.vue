@@ -25,9 +25,9 @@ import Search from './Search.vue'
 import Folders from './Folders.vue'
 import IconfolderOpen from '../Icons/IconfolderOpen.vue'
 import IconPlus from '../Icons/IconPlus.vue'
-import { useFoldersStore } from '../../store/FoldersStore.js'
+import { useFoldersStore } from '@/store/FoldersStore.js'
 import { onMounted } from 'vue'
-import { folder } from '../../actions/folder.js'
+import { folder } from '@/actions/folder.js'
 import NewFolder from './NewFolder.vue'
 
 const store = useFoldersStore()
