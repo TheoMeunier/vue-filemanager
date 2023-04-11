@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import IconFolderClose from '../Icons/IconfolderClose.vue'
+import IconFolderClose from '../Icons/IconFolderClose.vue'
 import IconArrowRight from '../Icons/IconArrowRight.vue'
 import { useFoldersStore } from '@/store/FoldersStore.js'
 import { onMounted, reactive, ref } from 'vue'

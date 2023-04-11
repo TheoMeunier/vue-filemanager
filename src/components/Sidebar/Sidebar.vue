@@ -23,7 +23,7 @@
 <script setup>
 import Search from './Search.vue'
 import Folders from './Folders.vue'
-import IconfolderOpen from '../Icons/IconfolderOpen.vue'
+import IconfolderOpen from '../Icons/IconFolderOpen.vue'
 import IconPlus from '../Icons/IconPlus.vue'
 import { useFoldersStore } from '@/store/FoldersStore.js'
 import { onMounted } from 'vue'

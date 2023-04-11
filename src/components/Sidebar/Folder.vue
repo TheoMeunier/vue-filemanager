@@ -31,14 +31,14 @@
 </template>
 
 <script setup>
-import IconfolderClose from '../Icons/IconfolderClose.vue'
+import IconfolderClose from '../Icons/IconFolderClose.vue'
 import IconPlus from '../Icons/IconPlus.vue'
 import Folders from './Folders.vue'
 import { useFoldersStore } from '@/store/FoldersStore.js'
 import { onMounted, ref } from 'vue'
 import NewFolder from './NewFolder.vue'
 import { folder } from '@/actions/folder.js'
-import IconfolderOpen from '../Icons/IconfolderOpen.vue'
+import IconfolderOpen from '../Icons/IconFolderOpen.vue'
 
 const store = useFoldersStore()
 const isFolderOpen = ref(false)
