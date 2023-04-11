@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-wrap gap-y-4 py-6">
+    <div class="flex flex-wrap gap-y-4 py-6 h-full">
         <slot v-if="store.files.length" v-for="file in store.files" :key="file.id">
             <file :file="file" v-show="!file.disable"/>
         </slot>
 
         <slot v-else>
-            <div class="w-full flex justify-center items-center flex-col text-gray-400">
+            <div class="flex flex-col items-center justify-center text-gray-400 w-full">
                 <p class="text-2xl py-3">Ce dossier est vide</p>
                 <p class="text-xl py-4">Déposer un fichier ici pour le téléverser<i class="fa-solid fa-file-arrow-down ml-2"></i></p>
                 <button class="btn btn__danger" v-if="storeFolder.selectFolder && !storeFolder.selectFolder.children.length" @click.prevent="removeFolder">
