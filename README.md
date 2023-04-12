@@ -2,7 +2,7 @@
 
 Here is a filemanager to manage the images of his site. It allows you to avoid uploading the same image several times.
 
-[![Filemanger](filemanager.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/filemanager.png)
+[![Filemanger](filemanager.png)](https://github.com/TheoMeunier/vue-filemanager/blob/master/filemanager.png)
 
 ## Installation
 
