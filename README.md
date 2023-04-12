@@ -1,7 +1,21 @@
-# Vue 3 + Vite
+# Filemanager - vue3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Here is a filemanager to manage the images of his site. It allows you to avoid uploading the same image several times.
 
-## Recommended IDE Setup
+[![Filemanger](filemanager.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/filemanager.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## API
+
+I have created the filemanager, so you have to create the API that goes with it. As you go along in the api folder you
+could find different api files for the tools / technology.
+
+## Route API
+
+| URL           | METHODE | Description   |
+|---------------|---------|---------------|
+| /folders      | GET     | Get Folders   |
+| /folders      | POST    | Create Folder |
+| /folders/{id} | DELETE  | Delete Folder |
+| /files        | GET     | Get File      |
+| /files        | POST    | Create File   |
+| /files/{id}   | DELETE  | Delete File   |
