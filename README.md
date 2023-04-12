@@ -7,13 +7,19 @@ Here is a filemanager to manage the images of his site. It allows you to avoid u
 ## Installation
 
 ```bash
-pnpm install 
+npm install isox-filemanager
+```
+
+or
+
+```bash
+yarn add isox-filemanager
 ```
 
 ## Usage
 
 ```js
-import { FileManager } from 'vue'
+import { FileManager } from 'isox-filemanager'
 
 app.use(FileManager)
 ```
