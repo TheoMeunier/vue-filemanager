@@ -13,6 +13,19 @@ import Sidebar from './Sidebar/Sidebar.vue'
 import Dropzone from './Dropzone.vue'
 import Files from './File/Files.vue'
 import Alerts from './Alert/Alerts.vue'
+import {useFileManagerStore} from "@/store/FilemangerStore.js";
+
+const store = useFileManagerStore()
+const props = defineProps({
+    endpoint: {
+        type: String,
+        required: true
+    }
+})
+
+store.url = props.endpoint
+
+console.log(store.url)
 </script>
 
 <style scoped>

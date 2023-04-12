@@ -4,6 +4,6 @@ import Filemanager from './components/Filemanager.vue'
 
 <template>
     <div class="container mx-auto p-8">
-        <filemanager />
+        <filemanager endpoint="http://localhost:8888/api"/>
     </div>
 </template>

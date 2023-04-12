@@ -5,21 +5,23 @@ import { useFilesStore } from './FilesStore.js'
 import { getParentFolder } from '../functions/foldersFunction.js'
 import { useAlertStore } from './AlertStore.js'
 import {i18n} from "@/lang/index.js";
+import {useFileManagerStore} from "@/store/FilemangerStore.js";
 
 export const useFoldersStore = defineStore('foldersStore', () => {
     const folders = ref({})
     const selectFolder = ref(null)
     const storeFile = useFilesStore()
     const storeAlert = useAlertStore()
+    const storeFileManager = useFileManagerStore()
     let folderChildren
 
     async function getFolders() {
-        let response = await axios.get('http://localhost:8888/api/folders')
+        let response = await axios.get(storeFileManager.url + '/folders')
         folders.value = response.data
     }
 
     async function getChildrenFolder(parent) {
-        let response = await axios.get('http://localhost:8888/api/folders?parent=' + parent)
+        let response = await axios.get(storeFileManager.url + '/folders?parent=' + parent)
         folderChildren = response.data
     }
 
@@ -47,7 +49,7 @@ export const useFoldersStore = defineStore('foldersStore', () => {
 
     async function createFolder(data) {
         try {
-            await axios.post('http://localhost:8888/api/folders', data)
+            await axios.post(storeFileManager.url + '/folders', data)
         } catch (e) {
             console.log(e)
         }

@@ -4,16 +4,18 @@ import { ref } from 'vue'
 import { useFoldersStore } from './FoldersStore.js'
 import { useAlertStore } from './AlertStore.js'
 import {i18n} from "@/lang/index.js";
+import {useFileManagerStore} from "@/store/FilemangerStore.js";
 
 export const useFilesStore = defineStore('filesStore', () => {
     const files = ref({})
     const storeFolder = useFoldersStore()
     const storeAlert = useAlertStore()
+    const storeFileManager = useFileManagerStore()
 
     async function getFiles(folder = null) {
         let url = folder ? '?folder=' + folder.id : ''
 
-        let response = await axios.get('http://localhost:8888/api/files' + url)
+        let response = await axios.get(storeFileManager.url + '/files' + url)
         files.value = response.data
     }
 
@@ -27,7 +29,7 @@ export const useFilesStore = defineStore('filesStore', () => {
                 fd.append('folder', selectFolder.id)
             }
 
-            let response = await axios.post('http://localhost:8888/api/files', fd, {
+            let response = await axios.post(storeFileManager.url + '/files', fd, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -42,7 +44,7 @@ export const useFilesStore = defineStore('filesStore', () => {
 
     async function deleteFile(file) {
         if (confirm(i18n.t('file.confirm_delete'))) {
-            await axios.delete('http://localhost:8888/api/files/' + file.id, file)
+            await axios.delete(storeFileManager.url + '/files/' + file.id, file)
 
             let index = files.value.indexOf(file)
             files.value.splice(index, 1)
