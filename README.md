@@ -4,6 +4,25 @@ Here is a filemanager to manage the images of his site. It allows you to avoid u
 
 [![Filemanger](filemanager.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/filemanager.png)
 
+## Installation
+
+```bash
+pnpm install 
+```
+
+## Usage
+
+```js
+import { FileManager } from 'vue'
+
+app.use(FileManager)
+```
+
+```vue
+<filemanager endpoint="https://your_api.com"/>
+```
+
+
 ## API
 
 I have created the filemanager, so you have to create the API that goes with it. As you go along in the api folder you

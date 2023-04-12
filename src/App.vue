@@ -1,5 +1,5 @@
 <script setup>
-import Filemanager from './components/Filemanager.vue'
+import Filemanager from './components/FileManager.vue'
 </script>
 
 <template>
