@@ -1,8 +1,10 @@
 {
   "name": "isox-filemanager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/filemanager.umd.js",
   "module": "./dist/filemanager.es.js",
   "exports": {
